@@ -235,7 +235,7 @@
           <p class="has-text-justified">The demand for training on longer sequences of data is growing rapidly, fueled by modern applications such as code-assistance and video-generation. However, training on very long sequences has a prohibitive memory cost, motivating the need for memory-efficient context parallelism. The figure below shows how the memory usage changes with different optimization techniques applied to a Llama3-8B model.</p>
           <br>
           <p class="has-text-justified">While techniques like FSDP helps lower the memory demand due to model parameters and the associated gradients, it does not address the activation memory footprint. DeepSpeed Ulysses is a context parallelism scheme that distributes the input sequence across 
-            multiple devices, helping lower the activation memory footprint. ALST addresses the activation memory for non-attention stages via tiling, but overlooks the attention stage. Thus, in our work, we present <b>UPipe</b>, which addresses the attention stage by performing fine-grained chunking at the attention head level.
+            multiple devices, helping lower the activation memory footprint. ALST addresses the activation memory for non-attention stages via tiling, but overlooks the attention stage. Thus, in our work, we present <b>UPipe</b>, which addresses the attention stage activation memory by performing fine-grained chunking at the attention head level.
           </p>
           <br>
           <img src="static/images/intro_memory_stack.png" alt="Activation memory breakdown showing that attention dominates memory usage in long-context Transformer training." style="width: 100%; border-radius: 12px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);" loading="lazy"/>
