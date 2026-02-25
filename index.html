@@ -215,7 +215,7 @@
             In this paper, we present <b>UPipe</b>, a simple yet effective context parallelism technique that performs fine-grained chunking at the attention head level.
             This technique significantly reduces the activation memory usage of self-attention, breaking the activation memory barrier and unlocking much longer context lengths.
             Our approach lowers the peak activation memory usage in the attention layer by as much as <b>82.5%</b> for 32B Transformers, while matching previous context parallelism techniques in terms of training speed.
-            UPipe can support maximum context lengths of up to <b>5M</b> tokens for training 8B models on a 8&times;H100 node, improving upon prior methods by <b>25%</b>.
+            UPipe can support maximum context lengths of up to <b>5M</b> tokens for training 8B models on an 8&times;H100 node, improving upon prior methods by <b>25%</b>.
           </p>
         </div>
       </div>
@@ -479,7 +479,7 @@
           On <b>Llama3-8B</b>, Untied Ulysses matches the throughput of DeepSpeed Ulysses at shorter context lengths while being the <em>only</em> method that can scale to <b>5M tokens</b>&mdash;a 25% improvement over the next best method (FPDT at 4M). At 2M+ tokens, Untied Ulysses consistently achieves the highest throughput among all methods.
         </p>
         <p>
-          On the larger <b>Qwen3-32B</b> model, UPipe achieves on par performance with DeepSpeed Ulysses, while consistently outperforms FPDT at all context lengths. UPipe also achieve a 2&times; longer context length over DeepSpeed Ulysses.
+          On the larger <b>Qwen3-32B</b> model, UPipe achieves on par performance with DeepSpeed Ulysses, while consistently outperforms FPDT at all context lengths. UPipe also achieves a 2&times; longer context length over DeepSpeed Ulysses.
         </p>
       </div>
 
@@ -489,7 +489,7 @@
             <h3 class="title is-4">Llama3-8B Multi-node (16&times;H100)</h3>
             <p>
               We evaluate the performance of UPipe using Llama3-8B on 16&times;H100 GPUs. 
-              We use a hybrid context parallelism setup similar to USP-Hybrid, with <i>8-ulysses-2-ring</i>, ie, Ulysses degree of 8 within the node, and ring degree of 2 across nodes.
+              We use a hybrid context parallelism setup similar to USP-Hybrid, with <i>8-ulysses-2-ring</i>, i.e., Ulysses degree of 8 within the node, and ring degree of 2 across nodes.
             <!-- </p>
             <p> -->
               The figure on the right compares the training throughput and memory usage across methods as context length scales. 
